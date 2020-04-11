@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minium-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="manifest" href="manifest.json">
+    <title>PWA</title>
+</head>
+<body>
+    <h1 class="title">满江红</h1>
+    <script>
+        if(navigator.serviceWorker) {
+            navigator.serviceWorker.register('sw.js').then(function(registartion) {
+                console.log('支持sw: ', registartion.scope);
+            })
+        }
+    </script>
+</body>
+</html>
