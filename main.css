@@ -2,10 +2,15 @@ html,
 body {
     height: 100%;
 }
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     color: #fff;
     background-color: #a7535a;
+    padding-top: 100px;
 }
 
 @font-face {
@@ -18,7 +23,7 @@ body {
 
 .title {
     font-family: 'webfont';
-    margin: 100px auto;
+    margin: 0 auto;
     writing-mode: tb;
     text-align: center;
     letter-spacing: 20px;

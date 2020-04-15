@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minium-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="./main.css">
     <link rel="manifest" href="manifest.json">
+    <link
+        rel='apple-touch-startup-image'
+        href='./app.png'
+        media='(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)'
+    />
+    <link
+        rel='apple-touch-icon'
+        sizes='151x127'
+        href='./app2.png'
+    />
     <title>PWA</title>
 </head>
 <body>
@@ -13,6 +23,13 @@
         if(navigator.serviceWorker) {
             navigator.serviceWorker.register('sw.js').then(function(registartion) {
                 console.log('支持sw: ', registartion.scope);
+                if(registartion.installing) {
+                    console.log('Service worker installing');
+                } else if(registartion.waiting) {
+                    console.log('Service worker installed');
+                } else if(registartion.active) {
+                    console.log('Service worker active');
+                }
             })
         }
     </script>
